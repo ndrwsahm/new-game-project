@@ -9,8 +9,6 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_dialogue_dialog_finished() -> void:
 	is_chatting = false
 	
-
-
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	print("Player collide")
 	$Dialog.start()
