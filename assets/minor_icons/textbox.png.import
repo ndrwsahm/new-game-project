@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgf33ck0qdora"
-path="res://.godot/imported/scroll.png-5228097a66c466094d3eb02ad8fe8cc9.ctex"
+uid="uid://ww6s2t8u11e2"
+path="res://.godot/imported/textbox.png-915fb803453e874fedcd105eb8d84614.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/maps/scroll.png"
-dest_files=["res://.godot/imported/scroll.png-5228097a66c466094d3eb02ad8fe8cc9.ctex"]
+source_file="res://assets/minor_icons/textbox.png"
+dest_files=["res://.godot/imported/textbox.png-915fb803453e874fedcd105eb8d84614.ctex"]
 
 [params]
 
