@@ -16,9 +16,27 @@ texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-83.4386, -84.8528, 82.0244, -84.8528, 76.3675, 89.0955, -77.7818, 89.0955)
-4:2/size_in_atlas = Vector2i(6, 8)
-4:2/0 = 0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-154.125, -126.508, 166.598, -126.508, 157.689, 237.87, -146.998, 239.652)
+3:2/size_in_atlas = Vector2i(7, 4)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-199.798, -123.471, 195.308, -118.981, 193.063, 107.756, -197.553, 112.246)
+10:0/size_in_atlas = Vector2i(3, 3)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-86, -84, 92, -86, 85, 89, -84, 89)
+10:3/size_in_atlas = Vector2i(3, 3)
+10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-86, -84, 92, -86, 85, 89, -84, 89)
+13:1/size_in_atlas = Vector2i(7, 5)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-211.023, -143.675, 215.513, -143.675, 213.268, 148.165, -204.288, 152.655)
+20:0/size_in_atlas = Vector2i(3, 3)
+20:0/0 = 0
+20:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-86, -84, 92, -86, 85, 89, -84, 89)
+20:3/size_in_atlas = Vector2i(3, 3)
+20:3/0 = 0
+20:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-86, -84, 92, -86, 85, 89, -84, 89)
+23:1/size_in_atlas = Vector2i(7, 5)
+23:1/0 = 0
+23:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-211.023, -143.675, 215.513, -143.675, 213.268, 148.165, -204.288, 152.655)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmtae"]
 texture = ExtResource("1_iiq2u")
@@ -221,7 +239,7 @@ layer_2/name = "Horizonal Walls"
 layer_3/name = "Vertical Walls"
 layer_3/tile_data = PackedInt32Array(2, 65538, 3, 65538, 65538, 3, 131074, 65538, 4, 196610, 65538, 5, 3, 131074, 3, 65539, 131074, 3, 131075, 131074, 4, 196611, 131074, 5, 4, 131074, 3, 65540, 131074, 3, 131076, 131074, 4, 196612, 327682, 5, 5, 131074, 3, 65541, 131074, 3, 131077, 131074, 4, 196613, 131074, 5, 6, 131074, 3, 65542, 131074, 3, 131078, 131074, 4, 196614, 327682, 5, 7, 131074, 3, 65543, 131074, 3, 131079, 131074, 4, 196615, 131074, 5, 8, 196610, 3, 65544, 196610, 3, 131080, 196610, 4, 196616, 196610, 5, -65534, 65538, 2, -65533, 131074, 2, -65532, 131074, 2, -65531, 131074, 2, -65530, 131074, 2, -65529, 131074, 2, -65528, 196610, 2)
 layer_4/name = "Houses"
-layer_4/tile_data = PackedInt32Array(65535, 0, 0, 65532, 0, 3, -196603, 262144, 2)
+layer_4/tile_data = PackedInt32Array(65535, 0, 0, 65532, 0, 3, -65531, 196608, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_ipkia")]
 position = Vector2(79, 287)
