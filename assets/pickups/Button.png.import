@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6luyf6k6cnnw"
-path="res://.godot/imported/forest_golem4.png-07ce31bdcde473a7f1271160befdfdaa.ctex"
+uid="uid://dlk1poaw0i8tv"
+path="res://.godot/imported/Button.png-6341c2412a3123e0087220c283d36db8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/golem picture board/forest_golem4.png"
-dest_files=["res://.godot/imported/forest_golem4.png-07ce31bdcde473a7f1271160befdfdaa.ctex"]
+source_file="res://assets/pickups/Button.png"
+dest_files=["res://.godot/imported/Button.png-6341c2412a3123e0087220c283d36db8.ctex"]
 
 [params]
 

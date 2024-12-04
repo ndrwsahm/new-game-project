@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drg0phlq5xjfh"
-path="res://.godot/imported/arrow.png-99cbdffd0587db3a1398feef41169f3f.ctex"
+uid="uid://b1rk1o1d5wpij"
+path="res://.godot/imported/underworld_scenary.png-cc77378f92034d57f866050d645f0a3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/effects/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-99cbdffd0587db3a1398feef41169f3f.ctex"]
+source_file="res://assets/maps/underworld_scenary.png"
+dest_files=["res://.godot/imported/underworld_scenary.png-cc77378f92034d57f866050d645f0a3f.ctex"]
 
 [params]
 
