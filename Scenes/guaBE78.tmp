@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bb7l2awo3naoq"]
+
+[ext_resource type="Texture2D" uid="uid://b8nk4tahjdcx6" path="res://assets/sprites/enemy.png" id="1_8jcc2"]
+[ext_resource type="Script" path="res://scripts/guard.gd" id="1_i8ljs"]
+[ext_resource type="PackedScene" uid="uid://dmw81a57w3faq" path="res://Scenes/dialog.tscn" id="3_p83br"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odrdy"]
+atlas = ExtResource("1_8jcc2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtsab"]
+atlas = ExtResource("1_8jcc2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no0fn"]
+atlas = ExtResource("1_8jcc2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5q5i"]
+atlas = ExtResource("1_8jcc2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jo1ba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odrdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtsab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no0fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5q5i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hh5t8"]
+radius = 12.0
+height = 38.0
+
+[node name="Guard" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_i8ljs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jo1ba")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_hh5t8")
+
+[node name="Dialogue" parent="." instance=ExtResource("3_p83br")]
+offset_left = 37.0
+offset_top = -17.0
+offset_right = 77.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="dialog_finished" from="Dialogue" to="." method="_on_dialogue_dialog_finished"]
