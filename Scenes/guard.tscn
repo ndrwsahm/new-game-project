@@ -1,71 +1,29 @@
-[gd_scene load_steps=15 format=3 uid="uid://bb7l2awo3naoq"]
+[gd_scene load_steps=9 format=3 uid="uid://bb7l2awo3naoq"]
 
 [ext_resource type="Script" path="res://scripts/guard.gd" id="1_i8ljs"]
-[ext_resource type="Texture2D" uid="uid://cm348keojcgfn" path="res://assets/sprites/Oceaneer.png" id="2_v4brx"]
+[ext_resource type="Texture2D" uid="uid://dikterqphbrud" path="res://assets/sprites/Pig_Wizard.png" id="2_dqwox"]
 [ext_resource type="PackedScene" uid="uid://dmw81a57w3faq" path="res://Scenes/dialog.tscn" id="3_p83br"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n21j4"]
-atlas = ExtResource("2_v4brx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeetu"]
+atlas = ExtResource("2_dqwox")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_71uia"]
-atlas = ExtResource("2_v4brx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8nvj"]
+atlas = ExtResource("2_dqwox")
 region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrrjn"]
-atlas = ExtResource("2_v4brx")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_adpp3"]
-atlas = ExtResource("2_v4brx")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ko18v"]
-atlas = ExtResource("2_v4brx")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vr6l2"]
-atlas = ExtResource("2_v4brx")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_piuu1"]
-atlas = ExtResource("2_v4brx")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3hyey"]
-atlas = ExtResource("2_v4brx")
-region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jo1ba"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n21j4")
+"texture": SubResource("AtlasTexture_yeetu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_71uia")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vrrjn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_adpp3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ko18v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vr6l2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_piuu1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3hyey")
+"texture": SubResource("AtlasTexture_f8nvj")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hh5t8"]
@@ -82,21 +40,23 @@ script = ExtResource("1_i8ljs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jo1ba")
 autoplay = "default"
+frame_progress = 0.675316
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(8, 0)
 shape = SubResource("CapsuleShape2D_hh5t8")
 
 [node name="Dialog" parent="." instance=ExtResource("3_p83br")]
-offset_left = 37.0
-offset_top = -17.0
-offset_right = 77.0
-offset_bottom = 23.0
+offset_left = 48.0
+offset_top = -39.0
+offset_right = 88.0
+offset_bottom = 1.0
 
 [node name="chat_detection_area" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+position = Vector2(7, 0)
 shape = SubResource("CircleShape2D_tbr3t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
