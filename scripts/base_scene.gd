@@ -10,7 +10,6 @@ func _ready() -> void:
 			player.queue_free()
 			
 		player = scene_manager.player
-		player.name = "Player"
 		add_child(player)
 		
 	position_player()
@@ -21,7 +20,6 @@ func position_player() -> void:
 		last_scene = "any"
 		
 	for entrance in entrance_markers.get_children():
-		print(entrance)
 		var entrance_name = entrance.name.to_lower().replace('_', '').replace(' ', '')
 		
 		if entrance is Marker2D and entrance_name == "any" or entrance_name == last_scene:

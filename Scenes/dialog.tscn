@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ww6s2t8u11e2" path="res://assets/minor_icons/textbox.png" id="2_n6kg7"]
 
 [node name="Dialog" type="Control"]
+z_index = 10
+y_sort_enabled = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 76.0
@@ -30,6 +32,8 @@ text = "Name:
 "
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+z_index = 15
+y_sort_enabled = true
 layout_mode = 0
 offset_left = 2.0
 offset_top = 16.0

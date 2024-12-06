@@ -1,16 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://brx1ijgtybe7q"]
+[gd_scene load_steps=17 format=3 uid="uid://bshtf4010nudp"]
 
-[ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_78mth"]
-[ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="1_qtlxj"]
-[ext_resource type="Texture2D" uid="uid://cbamgwvxtikj8" path="res://assets/maps/cave_scenary.png" id="2_pv4nq"]
-[ext_resource type="Texture2D" uid="uid://6xcfn4hptbqe" path="res://assets/maps/ocean_scenary.png" id="3_paxfd"]
-[ext_resource type="Texture2D" uid="uid://cbb1bimtuklr" path="res://assets/maps/forest_scenary.png" id="4_3fpxv"]
-[ext_resource type="Texture2D" uid="uid://b1rk1o1d5wpij" path="res://assets/maps/underworld_scenary.png" id="5_8nsdt"]
-[ext_resource type="Texture2D" uid="uid://bkb27d0shut10" path="res://assets/maps/Npcs.png" id="6_k7m5x"]
-[ext_resource type="PackedScene" uid="uid://dmvgiymg50ggf" path="res://Scenes/scene_trigger.tscn" id="8_3rd15"]
+[ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_prqau"]
+[ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="2_orvui"]
+[ext_resource type="Texture2D" uid="uid://cbamgwvxtikj8" path="res://assets/maps/cave_scenary.png" id="3_aiusl"]
+[ext_resource type="Texture2D" uid="uid://6xcfn4hptbqe" path="res://assets/maps/ocean_scenary.png" id="4_dwurk"]
+[ext_resource type="Texture2D" uid="uid://cbb1bimtuklr" path="res://assets/maps/forest_scenary.png" id="5_2xl7w"]
+[ext_resource type="Texture2D" uid="uid://b1rk1o1d5wpij" path="res://assets/maps/underworld_scenary.png" id="6_flq17"]
+[ext_resource type="Texture2D" uid="uid://bkb27d0shut10" path="res://assets/maps/Npcs.png" id="7_o3b4b"]
+[ext_resource type="PackedScene" uid="uid://dmvgiymg50ggf" path="res://Scenes/scene_trigger.tscn" id="8_xobhe"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnnu5"]
-texture = ExtResource("1_qtlxj")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5aap"]
+texture = ExtResource("2_orvui")
 texture_region_size = Vector2i(64, 64)
 0:3/size_in_atlas = Vector2i(3, 3)
 0:3/0 = 0
@@ -54,8 +54,8 @@ texture_region_size = Vector2i(64, 64)
 26:6/size_in_atlas = Vector2i(3, 4)
 26:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t414w"]
-texture = ExtResource("2_pv4nq")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5v8qp"]
+texture = ExtResource("3_aiusl")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -170,8 +170,8 @@ texture_region_size = Vector2i(64, 64)
 0:2/size_in_atlas = Vector2i(1, 2)
 0:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oafk"]
-texture = ExtResource("3_paxfd")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0xyp"]
+texture = ExtResource("4_dwurk")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
@@ -227,8 +227,8 @@ texture_region_size = Vector2i(64, 64)
 3:7/0 = 0
 3:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi5c2"]
-texture = ExtResource("4_3fpxv")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_175q5"]
+texture = ExtResource("5_2xl7w")
 texture_region_size = Vector2i(64, 64)
 2:0/0 = 0
 3:0/0 = 0
@@ -292,8 +292,8 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3cpg"]
-texture = ExtResource("5_8nsdt")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0y8t"]
+texture = ExtResource("6_flq17")
 texture_region_size = Vector2i(64, 64)
 7:1/0 = 0
 8:1/0 = 0
@@ -327,33 +327,33 @@ texture_region_size = Vector2i(64, 64)
 4:5/size_in_atlas = Vector2i(1, 2)
 4:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj2pu"]
-texture = ExtResource("6_k7m5x")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l88qe"]
+texture = ExtResource("7_o3b4b")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:1/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_1x74a"]
+[sub_resource type="TileSet" id="TileSet_gh57o"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_t414w")
-sources/0 = SubResource("TileSetAtlasSource_vnnu5")
-sources/2 = SubResource("TileSetAtlasSource_1oafk")
-sources/4 = SubResource("TileSetAtlasSource_xi5c2")
-sources/5 = SubResource("TileSetAtlasSource_l3cpg")
-sources/6 = SubResource("TileSetAtlasSource_dj2pu")
+sources/1 = SubResource("TileSetAtlasSource_5v8qp")
+sources/0 = SubResource("TileSetAtlasSource_y5aap")
+sources/2 = SubResource("TileSetAtlasSource_u0xyp")
+sources/4 = SubResource("TileSetAtlasSource_175q5")
+sources/5 = SubResource("TileSetAtlasSource_j0y8t")
+sources/6 = SubResource("TileSetAtlasSource_l88qe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l410a"]
 size = Vector2(86, 16)
 
-[node name="InsidePub" type="Node2D"]
-script = ExtResource("1_78mth")
+[node name="InsideHouse" type="Node2D"]
+script = ExtResource("1_prqau")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_1x74a")
+tile_set = SubResource("TileSet_gh57o")
 format = 2
 layer_0/name = "Backgroud"
-layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 1, 0, 262149, 1, 0, 327685, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0)
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 393218, 2, 196611, 393218, 3, 262147, 393218, 4, 327683, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 458754, 2, 196612, 1, 0, 262148, 458754, 4, 327684, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 524290, 2, 196613, 524290, 3, 262149, 524290, 4, 327685, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0)
 layer_1/name = "Rocks"
 layer_1/y_sort_enabled = true
 layer_2/name = "Horizonal Walls"
@@ -369,9 +369,9 @@ layer_6/name = "Carts"
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(389, 325)
+position = Vector2(426, 336)
 
-[node name="SceneTrigger" parent="." instance=ExtResource("8_3rd15")]
+[node name="SceneTrigger" parent="." instance=ExtResource("8_xobhe")]
 light_mask = 1
 visibility_layer = 1
 position = Vector2(388, 376)
