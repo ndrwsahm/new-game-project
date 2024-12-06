@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://6leoqxj7gyfq"]
 
 [ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="1_8bqv8"]
-[ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_h0txm"]
 [ext_resource type="Texture2D" uid="uid://cbamgwvxtikj8" path="res://assets/maps/cave_scenary.png" id="1_iiq2u"]
 [ext_resource type="PackedScene" uid="uid://cpl6kp31vi14a" path="res://Scenes/player.tscn" id="1_ipkia"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_of3y7"]
 [ext_resource type="Texture2D" uid="uid://6xcfn4hptbqe" path="res://assets/maps/ocean_scenary.png" id="3_h2spg"]
 [ext_resource type="Texture2D" uid="uid://cbb1bimtuklr" path="res://assets/maps/forest_scenary.png" id="5_b2b5y"]
 [ext_resource type="Texture2D" uid="uid://bkb27d0shut10" path="res://assets/maps/Npcs.png" id="6_4afu0"]
@@ -351,7 +351,7 @@ size = Vector2(96, 61)
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_h0txm")
+script = ExtResource("1_of3y7")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_i10rx")
@@ -372,15 +372,6 @@ layer_5/y_sort_enabled = true
 layer_5/tile_data = PackedInt32Array(65535, 196608, 2)
 layer_6/name = "Carts"
 
-[node name="EntranceMarkers" type="Node2D" parent="."]
-position = Vector2(-1, 0)
-
-[node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(333, 223)
-
-[node name="inside_pub" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-64, 138)
-
 [node name="Player" parent="." instance=ExtResource("1_ipkia")]
 position = Vector2(334, 223)
 collision_mask = 5
@@ -397,6 +388,12 @@ position = Vector2(180, 374)
 [node name="Guard" parent="." instance=ExtResource("7_qhbfw")]
 position = Vector2(478, 182)
 collision_layer = 2
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-64, 147)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("10_41mjm")]
 position = Vector2(-68, 67)

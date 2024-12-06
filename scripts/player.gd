@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED = 225.0
 const TILESIZE = 64
