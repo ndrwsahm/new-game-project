@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dljpgb37klbwg"]
+
+[ext_resource type="Texture2D" uid="uid://cgbp55drc0k5r" path="res://assets/minor_icons/pause.png" id="1_ayboo"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_trnfx"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+script = ExtResource("1_trnfx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 7.0
+offset_right = 1148.0
+offset_bottom = 636.0
+texture = ExtResource("1_ayboo")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

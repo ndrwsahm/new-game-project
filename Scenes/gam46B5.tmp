@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://6leoqxj7gyfq"]
+[gd_scene load_steps=24 format=3 uid="uid://6leoqxj7gyfq"]
 
 [ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="1_8bqv8"]
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_h0txm"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dljpgb37klbwg" path="res://Scenes/menu.tscn" id="9_1uqyd"]
 [ext_resource type="PackedScene" uid="uid://dmvgiymg50ggf" path="res://Scenes/scene_trigger.tscn" id="10_41mjm"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="12_jact1"]
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="14_l75q5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymcb2"]
 texture = ExtResource("1_8bqv8")
@@ -192,8 +193,6 @@ texture_region_size = Vector2i(64, 64)
 0:2/size_in_atlas = Vector2i(1, 2)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.4064, 64.0333, -32, 12.3612, 32, 11.9158, 32.6292, 63.3652)
-2:5/0 = 0
-2:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00sv4"]
 texture = ExtResource("3_h2spg")
@@ -412,7 +411,7 @@ layer_6/z_index = 1
 position = Vector2(-1, 0)
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(185, 219)
+position = Vector2(-6, 136)
 
 [node name="inside_pub" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-64, 127)
@@ -467,6 +466,9 @@ script = ExtResource("12_jact1")
 offset_right = 0.0
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
+
+[node name="SceneManager" type="Node2D" parent="."]
+script = ExtResource("14_l75q5")
 
 [connection signal="closed" from="Pause Menu/Menu" to="." method="_on_menu_closed"]
 [connection signal="opened" from="Pause Menu/Menu" to="." method="_on_menu_opened"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bshtf4010nudp"]
+[gd_scene load_steps=20 format=3 uid="uid://bshtf4010nudp"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_prqau"]
 [ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="2_orvui"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://b1rk1o1d5wpij" path="res://assets/maps/underworld_scenary.png" id="6_flq17"]
 [ext_resource type="Texture2D" uid="uid://bkb27d0shut10" path="res://assets/maps/Npcs.png" id="7_o3b4b"]
 [ext_resource type="PackedScene" uid="uid://dmvgiymg50ggf" path="res://Scenes/scene_trigger.tscn" id="8_xobhe"]
+[ext_resource type="PackedScene" uid="uid://cpl6kp31vi14a" path="res://Scenes/player.tscn" id="10_6fiug"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="11_wonb4"]
+[ext_resource type="PackedScene" uid="uid://dljpgb37klbwg" path="res://Scenes/menu.tscn" id="12_u18qy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5aap"]
 texture = ExtResource("2_orvui")
@@ -380,3 +383,20 @@ connected_scene = "game"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_l410a")
+
+[node name="Player" parent="." instance=ExtResource("10_6fiug")]
+position = Vector2(460, 288)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("11_wonb4")
+
+[node name="Menu" parent="Pause Menu" instance=ExtResource("12_u18qy")]
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="closed" from="Pause Menu/Menu" to="." method="_on_menu_closed"]
+[connection signal="opened" from="Pause Menu/Menu" to="." method="_on_menu_opened"]

@@ -3,8 +3,12 @@ class_name BaseScene extends Node
 @onready var player: Player = $Player
 @onready var entrance_markers: Node2D = $EntranceMarkers
 
+var tree
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	tree = get_tree()
+	print(tree)
 	if scene_manager.player:
 		if player:
 			player.queue_free()
@@ -13,7 +17,7 @@ func _ready() -> void:
 		add_child(player)
 		
 	position_player()
-	
+
 func position_player() -> void:
 	var last_scene = scene_manager.last_scene_name.to_lower().replace('_', '').replace(' ', '')
 	if last_scene.is_empty():
@@ -24,3 +28,14 @@ func position_player() -> void:
 		
 		if entrance is Marker2D and entrance_name == "any" or entrance_name == last_scene:
 			player.global_position = entrance.global_position
+
+
+func _on_menu_closed() -> void:
+	if !tree:
+		return
+	tree.paused = false
+	
+func _on_menu_opened() -> void:
+	if !tree:
+		return
+	tree.paused = true
