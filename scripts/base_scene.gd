@@ -29,12 +29,13 @@ func position_player() -> void:
 		if entrance is Marker2D and entrance_name == "any" or entrance_name == last_scene:
 			player.global_position = entrance.global_position
 
-
+#Need to key for each scene!!!!
 func _on_menu_closed() -> void:
 	if !tree:
 		return
 	tree.paused = false
 	
+#Need to key for each scene!!!!
 func _on_menu_opened() -> void:
 	if !tree:
 		return

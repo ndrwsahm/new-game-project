@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://6leoqxj7gyfq"]
+[gd_scene load_steps=24 format=3 uid="uid://6leoqxj7gyfq"]
 
 [ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="1_8bqv8"]
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_h0txm"]
@@ -369,6 +369,8 @@ sources/4 = SubResource("TileSetAtlasSource_362yh")
 sources/5 = SubResource("TileSetAtlasSource_f8xmb")
 sources/6 = SubResource("TileSetAtlasSource_6dq84")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1oj85"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmt1c"]
 size = Vector2(96, 43)
 
@@ -415,7 +417,7 @@ position = Vector2(-1, 0)
 position = Vector2(185, 219)
 
 [node name="inside_pub" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-64, 127)
+position = Vector2(-64, 98)
 
 [node name="inside_house" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(806, 653)
@@ -434,6 +436,15 @@ position_smoothing_enabled = true
 
 [node name="Slime" parent="." instance=ExtResource("6_mqk0p")]
 position = Vector2(180, 374)
+
+[node name="SceneTrigger2" parent="Slime" instance=ExtResource("10_41mjm")]
+z_index = 22
+position = Vector2(-68, 67)
+connected_scene = "test"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/SceneTrigger2"]
+position = Vector2(72, -59)
+shape = SubResource("CapsuleShape2D_1oj85")
 
 [node name="Guard" parent="." instance=ExtResource("7_qhbfw")]
 position = Vector2(478, 182)
