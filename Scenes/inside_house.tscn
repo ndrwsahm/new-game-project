@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="11_wonb4"]
 [ext_resource type="PackedScene" uid="uid://dljpgb37klbwg" path="res://Scenes/menu.tscn" id="12_u18qy"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5aap"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxddf"]
 texture = ExtResource("2_orvui")
 texture_region_size = Vector2i(64, 64)
 0:3/size_in_atlas = Vector2i(3, 3)
@@ -57,7 +57,7 @@ texture_region_size = Vector2i(64, 64)
 26:6/size_in_atlas = Vector2i(3, 4)
 26:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5v8qp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15wsg"]
 texture = ExtResource("3_aiusl")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -173,7 +173,7 @@ texture_region_size = Vector2i(64, 64)
 0:2/size_in_atlas = Vector2i(1, 2)
 0:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0xyp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7iyg"]
 texture = ExtResource("4_dwurk")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
@@ -230,7 +230,7 @@ texture_region_size = Vector2i(64, 64)
 3:7/0 = 0
 3:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_175q5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tmaa"]
 texture = ExtResource("5_2xl7w")
 texture_region_size = Vector2i(64, 64)
 2:0/0 = 0
@@ -295,7 +295,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0y8t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbbgq"]
 texture = ExtResource("6_flq17")
 texture_region_size = Vector2i(64, 64)
 7:1/0 = 0
@@ -330,7 +330,7 @@ texture_region_size = Vector2i(64, 64)
 4:5/size_in_atlas = Vector2i(1, 2)
 4:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l88qe"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0kbm4"]
 texture = ExtResource("7_o3b4b")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -339,12 +339,12 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_gh57o"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_5v8qp")
-sources/0 = SubResource("TileSetAtlasSource_y5aap")
-sources/2 = SubResource("TileSetAtlasSource_u0xyp")
-sources/4 = SubResource("TileSetAtlasSource_175q5")
-sources/5 = SubResource("TileSetAtlasSource_j0y8t")
-sources/6 = SubResource("TileSetAtlasSource_l88qe")
+sources/1 = SubResource("TileSetAtlasSource_15wsg")
+sources/0 = SubResource("TileSetAtlasSource_qxddf")
+sources/2 = SubResource("TileSetAtlasSource_k7iyg")
+sources/4 = SubResource("TileSetAtlasSource_7tmaa")
+sources/5 = SubResource("TileSetAtlasSource_sbbgq")
+sources/6 = SubResource("TileSetAtlasSource_0kbm4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l410a"]
 size = Vector2(86, 16)
@@ -356,7 +356,7 @@ script = ExtResource("1_prqau")
 tile_set = SubResource("TileSet_gh57o")
 format = 2
 layer_0/name = "Backgroud"
-layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 393218, 2, 196611, 393218, 3, 262147, 393218, 4, 327683, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 458754, 2, 196612, 1, 0, 262148, 458754, 4, 327684, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 524290, 2, 196613, 524290, 3, 262149, 524290, 4, 327685, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0)
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 3, 1, 0, 65539, 1, 0, 327683, 1, 0, 4, 1, 0, 65540, 1, 0, 327684, 1, 0, 5, 1, 0, 65541, 1, 0, 327685, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 196611, 131074, 3, 196612, 131074, 3, 196613, 131074, 3, 131077, 131074, 3, 131076, 131074, 3, 131075, 131074, 3)
 layer_1/name = "Rocks"
 layer_1/y_sort_enabled = true
 layer_2/name = "Horizonal Walls"
