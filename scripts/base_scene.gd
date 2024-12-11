@@ -8,7 +8,6 @@ var tree
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tree = get_tree()
-	print(tree)
 	if scene_manager.player:
 		if player:
 			player.queue_free()
@@ -16,10 +15,18 @@ func _ready() -> void:
 		player = scene_manager.player
 		add_child(player)
 		
+	var current_scene = scene_manager.current_scene_name
+	
+	if current_scene == "battle":
+		player.visible = false
+	else:
+		player.visible = true
+		
 	position_player()
 
 func position_player() -> void:
 	var last_scene = scene_manager.last_scene_name.to_lower().replace('_', '').replace(' ', '')
+	
 	if last_scene.is_empty():
 		last_scene = "any"
 		

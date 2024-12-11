@@ -1,16 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccan11nqfi7s3"]
+[gd_scene load_steps=26 format=3 uid="uid://ccan11nqfi7s3"]
 
-[ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_nbpme"]
-[ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="2_ouk6v"]
-[ext_resource type="Texture2D" uid="uid://cbamgwvxtikj8" path="res://assets/maps/cave_scenary.png" id="3_oscc0"]
-[ext_resource type="Texture2D" uid="uid://6xcfn4hptbqe" path="res://assets/maps/ocean_scenary.png" id="4_gw6h7"]
-[ext_resource type="Texture2D" uid="uid://cbb1bimtuklr" path="res://assets/maps/forest_scenary.png" id="5_op7x2"]
-[ext_resource type="Texture2D" uid="uid://b1rk1o1d5wpij" path="res://assets/maps/underworld_scenary.png" id="6_cxnjv"]
-[ext_resource type="Texture2D" uid="uid://bkb27d0shut10" path="res://assets/maps/Npcs.png" id="7_tyoo7"]
-[ext_resource type="PackedScene" uid="uid://d4mhjq651egt" path="res://Scenes/Unit.tscn" id="8_03lfa"]
+[ext_resource type="Texture2D" uid="uid://rjxv2x5cf1tk" path="res://assets/maps/Buildings.png" id="1_ht3ih"]
+[ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_i3jw1"]
+[ext_resource type="Texture2D" uid="uid://cbamgwvxtikj8" path="res://assets/maps/cave_scenary.png" id="2_3xf1o"]
+[ext_resource type="Texture2D" uid="uid://6xcfn4hptbqe" path="res://assets/maps/ocean_scenary.png" id="3_621dr"]
+[ext_resource type="Texture2D" uid="uid://cbb1bimtuklr" path="res://assets/maps/forest_scenary.png" id="4_5c2le"]
+[ext_resource type="Texture2D" uid="uid://b1rk1o1d5wpij" path="res://assets/maps/underworld_scenary.png" id="5_0ugoa"]
+[ext_resource type="Texture2D" uid="uid://bkb27d0shut10" path="res://assets/maps/Npcs.png" id="6_tyn2r"]
+[ext_resource type="PackedScene" uid="uid://d4mhjq651egt" path="res://Scenes/Unit.tscn" id="8_go3da"]
+[ext_resource type="Script" path="res://scripts/GameBoard.gd" id="8_kxtpa"]
+[ext_resource type="PackedScene" uid="uid://cxw07d4aolqom" path="res://Scenes/unit_overlay.tscn" id="9_gq17j"]
+[ext_resource type="Texture2D" uid="uid://dikterqphbrud" path="res://assets/sprites/Pig_Wizard.png" id="9_j8q0c"]
+[ext_resource type="Texture2D" uid="uid://dyqr0vovn6aaw" path="res://assets/sprites/Necromancer.png" id="10_cjkx6"]
+[ext_resource type="PackedScene" uid="uid://c7kp4dqt5tp2t" path="res://Scenes/UnitPath.tscn" id="10_h1qyd"]
+[ext_resource type="Texture2D" uid="uid://b0rysftmhnnl7" path="res://assets/sprites/Chicken_Knight.png" id="10_p6uqw"]
+[ext_resource type="Texture2D" uid="uid://c5ks52asaiwsh" path="res://assets/sprites/Necromancer_Familiar.png" id="11_6o0tf"]
+[ext_resource type="Texture2D" uid="uid://rmjco8s43d3s" path="res://assets/sprites/frog.png" id="11_gi5qu"]
+[ext_resource type="Texture2D" uid="uid://slk4anii6csy" path="res://assets/sprites/Necromancer_Golem.png" id="14_ss6xt"]
+[ext_resource type="PackedScene" uid="uid://ds0qgx8dx1bl3" path="res://Scenes/cursor.tscn" id="15_p12ss"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwx7s"]
-texture = ExtResource("2_ouk6v")
+texture = ExtResource("1_ht3ih")
 texture_region_size = Vector2i(64, 64)
 0:3/size_in_atlas = Vector2i(3, 3)
 0:3/0 = 0
@@ -55,7 +65,7 @@ texture_region_size = Vector2i(64, 64)
 26:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be4p3"]
-texture = ExtResource("3_oscc0")
+texture = ExtResource("2_3xf1o")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -171,7 +181,7 @@ texture_region_size = Vector2i(64, 64)
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ifhc"]
-texture = ExtResource("4_gw6h7")
+texture = ExtResource("3_621dr")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
@@ -228,7 +238,7 @@ texture_region_size = Vector2i(64, 64)
 3:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1xqd"]
-texture = ExtResource("5_op7x2")
+texture = ExtResource("4_5c2le")
 texture_region_size = Vector2i(64, 64)
 2:0/0 = 0
 3:0/0 = 0
@@ -293,7 +303,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/texture_origin = Vector2i(0, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhoil"]
-texture = ExtResource("6_cxnjv")
+texture = ExtResource("5_0ugoa")
 texture_region_size = Vector2i(64, 64)
 7:1/0 = 0
 8:1/0 = 0
@@ -328,7 +338,7 @@ texture_region_size = Vector2i(64, 64)
 4:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ia0n"]
-texture = ExtResource("7_tyoo7")
+texture = ExtResource("6_tyn2r")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:1/0 = 0
@@ -344,7 +354,14 @@ sources/5 = SubResource("TileSetAtlasSource_jhoil")
 sources/6 = SubResource("TileSetAtlasSource_6ia0n")
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_nbpme")
+script = ExtResource("1_i3jw1")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+visible = false
+position = Vector2(-393, -27)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2b8dh")
@@ -365,15 +382,87 @@ layer_6/name = "Carts"
 
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 position = Vector2(254, 196)
+zoom = Vector2(1.1, 1.1)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="EntranceMarkers" type="Node2D" parent="."]
-position = Vector2(-1, 0)
+[node name="Gameboard" type="Node2D" parent="."]
+script = ExtResource("8_kxtpa")
 
-[node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(185, 219)
+[node name="UnitOverlay" parent="Gameboard" instance=ExtResource("9_gq17j")]
+layer_0/modulate = Color(1, 1, 1, 0.6)
 
-[node name="Unit" parent="." instance=ExtResource("8_03lfa")]
-position = Vector2(-81, -21)
+[node name="UnitPath" parent="Gameboard" instance=ExtResource("10_h1qyd")]
+
+[node name="Cursor" parent="Gameboard" instance=ExtResource("15_p12ss")]
+y_sort_enabled = true
+position = Vector2(0, 1)
+
+[node name="ChickenKnight" parent="Gameboard" instance=ExtResource("8_go3da")]
+y_sort_enabled = true
+position = Vector2(58, 280)
+move_range = 3
+move_speed = 400.0
+hframes = 6
+vframes = 1
+class_type = "golem"
+skin = ExtResource("10_p6uqw")
+skin_offset = Vector2(0, 170)
+
+[node name="FrogSheriff" parent="Gameboard" instance=ExtResource("8_go3da")]
+y_sort_enabled = true
+position = Vector2(220, 282)
+move_range = 3
+move_speed = 350.0
+hframes = 1
+vframes = 1
+class_type = "familiar"
+skin = ExtResource("11_gi5qu")
+skin_offset = Vector2(330, 465)
+
+[node name="PigWizard" parent="Gameboard" instance=ExtResource("8_go3da")]
+y_sort_enabled = true
+position = Vector2(128, 279)
+move_range = 3
+move_speed = 375.0
+hframes = 3
+vframes = 1
+class_type = "summoner"
+skin = ExtResource("9_j8q0c")
+skin_offset = Vector2(0, 170)
+
+[node name="NecroSummoner" parent="Gameboard" instance=ExtResource("8_go3da")]
+y_sort_enabled = true
+position = Vector2(209, 160)
+move_range = 3
 move_speed = 300.0
+hframes = 8
+vframes = 6
+class_type = "summoner"
+skin = ExtResource("10_cjkx6")
+skin_offset = Vector2(0, 170)
+
+[node name="NecroFamiliar" parent="Gameboard" instance=ExtResource("8_go3da")]
+y_sort_enabled = true
+position = Vector2(137, 160)
+move_range = 3
+move_speed = 275.0
+hframes = 10
+vframes = 1
+class_type = "familiar"
+skin = ExtResource("11_6o0tf")
+skin_offset = Vector2(0, 460)
+
+[node name="NecroGolem" parent="Gameboard" instance=ExtResource("8_go3da")]
+y_sort_enabled = true
+position = Vector2(62, 160)
+move_range = 3
+move_speed = 250.0
+hframes = 10
+vframes = 1
+class_type = "golem"
+skin = ExtResource("14_ss6xt")
+skin_offset = Vector2(0, 460)
+
+[connection signal="accept_pressed" from="Gameboard/Cursor" to="Gameboard" method="_on_cursor_accept_pressed"]
+[connection signal="moved" from="Gameboard/Cursor" to="Gameboard" method="_on_cursor_moved"]

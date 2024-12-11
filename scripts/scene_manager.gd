@@ -2,11 +2,13 @@ class_name SceneManager extends Node
 
 var player: Player
 var last_scene_name: String
+var current_scene_name: String
 
 var scene_dir_path = "res://Scenes/"
 
 func change_scene(from, to_scene_name: String) -> void:
 	last_scene_name = from.name
+	current_scene_name = to_scene_name
 	
 	player = from.player
 	player.name = "Player"

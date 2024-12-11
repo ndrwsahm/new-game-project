@@ -440,7 +440,7 @@ position = Vector2(180, 374)
 [node name="SceneTrigger2" parent="Slime" instance=ExtResource("10_41mjm")]
 z_index = 22
 position = Vector2(-68, 67)
-connected_scene = "test"
+connected_scene = "battle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/SceneTrigger2"]
 position = Vector2(72, -59)

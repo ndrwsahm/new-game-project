@@ -15,6 +15,11 @@ signal walk_finished
 ## The unit's move speed when it's moving along a path.
 @export var move_speed := 600.0
 ## Texture representing the unit.
+@export var hframes := 6
+@export var vframes := 1
+
+@export var class_type : String
+
 @export var skin: Texture:
 	set(value):
 		skin = value
@@ -29,7 +34,7 @@ signal walk_finished
 		if not _sprite:
 			await ready
 		_sprite.position = value
-		print(_sprite.postion)
+		#print(_sprite.postion)
 
 ## Coordinates of the current cell the cursor moved to.
 var cell := Vector2.ZERO:
@@ -57,7 +62,9 @@ var _is_walking := false:
 
 
 func _ready() -> void:
-	print("here")
+	_sprite.set_hframes(hframes)
+	_sprite.set_vframes(vframes)
+	
 	set_process(false)
 	_path_follow.rotates = false
 
@@ -68,21 +75,19 @@ func _ready() -> void:
 	# moving the unit.
 	if not Engine.is_editor_hint():
 		curve = Curve2D.new()
-		
+	
+	var rng = RandomNumberGenerator.new()
+	
+	var x = rng.randi_range(0, 7)
+	var y = rng.randi_range(0, 5)
 	var points := [
-		Vector2(0, 0),
-		Vector2(0, 5),
-		Vector2(7, 5),
-		Vector2(7, 0),
-		Vector2(0, 0)
+		Vector2(x, y)
 	]
 
-	print(points)
 	walk_along(PackedVector2Array(points))
 
 func _process(delta: float) -> void:
 	_path_follow.progress += move_speed * delta
-	print("process")
 	if _path_follow.progress_ratio >= 1.0:
 		_is_walking = false
 		# Setting this value to 0.0 causes a Zero Length Interval error
@@ -96,7 +101,6 @@ func _process(delta: float) -> void:
 ## `path` is an array of grid coordinates that the function converts to map coordinates.
 func walk_along(path: PackedVector2Array) -> void:
 	if path.is_empty():
-		print("empty")
 		return
 
 	curve.add_point(Vector2.ZERO)

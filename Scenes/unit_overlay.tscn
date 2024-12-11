@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxw07d4aolqom"]
+
+[ext_resource type="TileSet" uid="uid://dym4ul7w4476m" path="res://resources/unit_overlay_tileset.tres" id="1_nfd8e"]
+[ext_resource type="Script" path="res://scripts/UnitOverlay.gd" id="2_ck5k8"]
+
+[node name="UnitOverlay" type="TileMap"]
+tile_set = ExtResource("1_nfd8e")
+format = 2
+script = ExtResource("2_ck5k8")
