@@ -41,8 +41,13 @@ func is_occupied(cell: Vector2) -> bool:
 
 ## Returns an array of cells a given unit can walk using the flood fill algorithm.
 func get_walkable_cells(unit: Unit) -> Array:
-	return _flood_fill(unit.cell, unit.move_range, unit.class_type)
-	
+	var array := []
+	if unit.class_type == "golem":
+		return _golem_fill(unit.cell, unit.move_range)
+	elif unit.class_type == "familiar":
+		return _familiar_fill(unit.cell, unit.move_range)
+	else:
+		return array
 ## Clears, and refills the `_units` dictionary with game objects that are on the board.
 func _reinitialize() -> void:
 	_units.clear()
@@ -53,10 +58,40 @@ func _reinitialize() -> void:
 			continue
 		_units[unit.cell] = unit
 
+func _familiar_fill(cell: Vector2, max_distance: int) -> Array:
+	var array := []
 
+	for m in range(max_distance):
+		var down_right := Vector2(cell.x+m+1, cell.y+m+1)
+		if is_occupied(down_right):
+			break
+		if grid.is_within_bounds(down_right):
+			array.append(down_right)
+	
+	for m in range(max_distance):	
+		var up_right := Vector2(cell.x+m+1, cell.y-m-1)
+		if is_occupied(up_right):
+			break
+		if grid.is_within_bounds(up_right):
+			array.append(up_right)
+			
+	for m in range(max_distance):		
+		var down_left := Vector2(cell.x-m-1, cell.y+m+1)
+		if is_occupied(down_left):
+			break
+		if grid.is_within_bounds(down_left):
+			array.append(down_left)
+
+	for m in range(max_distance):	
+		var up_left := Vector2(cell.x-m-1, cell.y-m-1)
+		if is_occupied(up_left):
+			break
+		if grid.is_within_bounds(up_left):
+			array.append(up_left)
+			
+	return array
 ## Returns an array with all the coordinates of walkable cells based on the `max_distance`.
-## TODO: Restructure to fit the class type and moves
-func _flood_fill(cell: Vector2, max_distance: int, class_type: String) -> Array:
+func _golem_fill(cell: Vector2, max_distance: int) -> Array:
 	var array := []
 	var stack := [cell]
 	
@@ -67,7 +102,7 @@ func _flood_fill(cell: Vector2, max_distance: int, class_type: String) -> Array:
 			continue
 		if current in array:
 			continue
-		if current.x - cell.x != 0 and current.y - cell.y != 0 and class_type == "golem":
+		if current.x - cell.x != 0 and current.y - cell.y != 0:
 			continue
 			
 		var difference: Vector2 = (current - cell).abs()
@@ -78,18 +113,8 @@ func _flood_fill(cell: Vector2, max_distance: int, class_type: String) -> Array:
 
 		array.append(current)
 		
-		
-		
-		# TODO: Still doesn't work as intended but cool pattern for other classes???
-		var	direction_select = DIRECTIONS
-		if class_type == "familiar":
-			direction_select = DIAGANOL_DIRECTIONS
-		else:
-			direction_select = DIRECTIONS
-			
-		for direction in direction_select:
+		for direction in DIRECTIONS:
 			var coordinates: Vector2 = current + direction
-			print(coordinates)
 			if is_occupied(coordinates):
 				continue
 			if coordinates in array:
@@ -100,6 +125,8 @@ func _flood_fill(cell: Vector2, max_distance: int, class_type: String) -> Array:
 				continue
 
 			stack.append(coordinates)
+			
+	print(array)
 	return array
 
 ## Updates the _units dictionary with the target position for the unit and asks the _active_unit to walk to it.
