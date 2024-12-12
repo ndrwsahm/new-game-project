@@ -93,16 +93,23 @@ func _process(delta: float) -> void:
 		# Setting this value to 0.0 causes a Zero Length Interval error
 		_path_follow.progress = 0.00001
 		position = grid.calculate_map_position(cell)
+		print(position)
 		curve.clear_points()
 		emit_signal("walk_finished")
 
-
+func teleport(end_pos: Vector2) -> void:
+	position = grid.calculate_map_position(end_pos)
+	cell = grid.calculate_grid_coordinates(position)
+	curve.clear_points()
+	_is_walking = false
+	_path_follow.progress_ratio = 1.1
+	
 ## Starts walking along the `path`.
 ## `path` is an array of grid coordinates that the function converts to map coordinates.
 func walk_along(path: PackedVector2Array) -> void:
 	if path.is_empty():
 		return
-
+	
 	curve.add_point(Vector2.ZERO)
 	for point in path:
 		curve.add_point(grid.calculate_map_position(point) - position)

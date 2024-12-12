@@ -47,7 +47,7 @@ func get_walkable_cells(unit: Unit) -> Array:
 	elif unit.class_type == "familiar":
 		return _familiar_fill(unit.cell, unit.move_range)
 	else:
-		return array
+		return _summoner_fill(unit.cell, unit.move_range)
 ## Clears, and refills the `_units` dictionary with game objects that are on the board.
 func _reinitialize() -> void:
 	_units.clear()
@@ -57,6 +57,31 @@ func _reinitialize() -> void:
 		if not unit:
 			continue
 		_units[unit.cell] = unit
+		
+func _summoner_fill(cell: Vector2, max_distance: int) -> Array:
+	print("current position: ", cell.x, cell.y)
+	var moves := [
+		Vector2(cell.x+1, cell.y-2),
+		Vector2(cell.x+1, cell.y+2),
+		Vector2(cell.x+2, cell.y-1),
+		Vector2(cell.x+2, cell.y+1),
+		
+		Vector2(cell.x-1, cell.y-2),
+		Vector2(cell.x-1, cell.y+2),
+		Vector2(cell.x-2, cell.y-1),
+		Vector2(cell.x-2, cell.y+1)
+	]
+	var array := []
+
+	for m in moves:
+		if is_occupied(m):
+			continue
+		if not grid.is_within_bounds(m):
+			continue 
+		array.append(m)
+			#remove from list
+	print(array)		
+	return array
 
 func _familiar_fill(cell: Vector2, max_distance: int) -> Array:
 	var array := []
@@ -126,9 +151,22 @@ func _golem_fill(cell: Vector2, max_distance: int) -> Array:
 
 			stack.append(coordinates)
 			
-	print(array)
 	return array
 
+func _teleport_active_units(new_cell: Vector2) -> void:
+	if is_occupied(new_cell) or not new_cell in _walkable_cells:
+		return
+	# warning-ignore:return_value_discarded
+	_units.erase(_active_unit.cell)
+	_units[new_cell] = _active_unit
+	_deselect_active_unit()
+	_active_unit.teleport(new_cell)
+	_clear_active_unit()
+	#emit_signal("walk_finished")
+	#await _active_unit.walk_finished
+	print("walk finished")
+	
+	
 ## Updates the _units dictionary with the target position for the unit and asks the _active_unit to walk to it.
 func _move_active_unit(new_cell: Vector2) -> void:
 	if is_occupied(new_cell) or not new_cell in _walkable_cells:
@@ -170,7 +208,12 @@ func _on_cursor_accept_pressed(cell: Variant) -> void:
 	if not _active_unit:
 		_select_unit(cell)
 	elif _active_unit.is_selected:
-		_move_active_unit(cell)
+		if _active_unit.class_type == "summoner":
+			_teleport_active_units(cell)
+			#_move_active_unit(cell)
+			
+		else:
+			_move_active_unit(cell)
 
 func _on_cursor_moved(new_cell: Variant) -> void:
 	if _active_unit and _active_unit.is_selected:
