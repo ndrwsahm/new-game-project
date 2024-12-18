@@ -9,6 +9,7 @@ const DIAGANOL_DIRECTIONS = [Vector2.LEFT+Vector2.UP, Vector2.RIGHT+Vector2.UP,
 							Vector2.LEFT+Vector2.DOWN,	Vector2.RIGHT+Vector2.DOWN]
 ## Resource of type Grid.
 @export var grid: Resource = preload("res://resources/Grid.tres")
+@onready var gameboard: GameBoard = $"."
 
 ## Mapping of coordinates of a cell to a reference to the unit it contains.
 var _units := {}
@@ -48,6 +49,7 @@ func get_walkable_cells(unit: Unit) -> Array:
 		return _familiar_fill(unit.cell, unit.move_range)
 	else:
 		return _summoner_fill(unit.cell, unit.move_range)
+		
 ## Clears, and refills the `_units` dictionary with game objects that are on the board.
 func _reinitialize() -> void:
 	_units.clear()
@@ -56,10 +58,19 @@ func _reinitialize() -> void:
 		var unit := child as Unit
 		if not unit:
 			continue
+		for u in _units:
+			while unit.cell == u:
+				print("duplicate")
+				var rng = RandomNumberGenerator.new()
+	
+				var x = rng.randi_range(0, 7)
+				var y = rng.randi_range(0, 5)
+				
+				unit.cell = Vector2(x, y)
+				
 		_units[unit.cell] = unit
 		
 func _summoner_fill(cell: Vector2, max_distance: int) -> Array:
-	print("current position: ", cell.x, cell.y)
 	var moves := [
 		Vector2(cell.x+1, cell.y-2),
 		Vector2(cell.x+1, cell.y+2),
@@ -79,8 +90,7 @@ func _summoner_fill(cell: Vector2, max_distance: int) -> Array:
 		if not grid.is_within_bounds(m):
 			continue 
 		array.append(m)
-			#remove from list
-	print(array)		
+			#remove from list	
 	return array
 
 func _familiar_fill(cell: Vector2, max_distance: int) -> Array:
@@ -161,11 +171,7 @@ func _teleport_active_units(new_cell: Vector2) -> void:
 	_units[new_cell] = _active_unit
 	_deselect_active_unit()
 	_active_unit.teleport(new_cell)
-	_clear_active_unit()
-	#emit_signal("walk_finished")
-	#await _active_unit.walk_finished
-	print("walk finished")
-	
+	_clear_active_unit()	
 	
 ## Updates the _units dictionary with the target position for the unit and asks the _active_unit to walk to it.
 func _move_active_unit(new_cell: Vector2) -> void:

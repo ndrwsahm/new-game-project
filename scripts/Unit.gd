@@ -55,11 +55,11 @@ var _is_walking := false:
 	set(value):
 		_is_walking = value
 		set_process(_is_walking)
-
+		
 @onready var _sprite: Sprite2D = $PathFollow2D/Sprite
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
 @onready var _path_follow: PathFollow2D = $PathFollow2D
-
+@onready var _board: GameBoard = $".."
 
 func _ready() -> void:
 	_sprite.set_hframes(hframes)
@@ -80,10 +80,11 @@ func _ready() -> void:
 	
 	var x = rng.randi_range(0, 7)
 	var y = rng.randi_range(0, 5)
+	
 	var points := [
 		Vector2(x, y)
 	]
-
+	
 	walk_along(PackedVector2Array(points))
 
 func _process(delta: float) -> void:
@@ -93,7 +94,6 @@ func _process(delta: float) -> void:
 		# Setting this value to 0.0 causes a Zero Length Interval error
 		_path_follow.progress = 0.00001
 		position = grid.calculate_map_position(cell)
-		print(position)
 		curve.clear_points()
 		emit_signal("walk_finished")
 
@@ -115,3 +115,4 @@ func walk_along(path: PackedVector2Array) -> void:
 		curve.add_point(grid.calculate_map_position(point) - position)
 	cell = path[-1]
 	_is_walking = true
+	
