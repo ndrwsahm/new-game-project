@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://0ymig3q47to6" path="res://assets/minor_icons/turn_order_icon.png" id="2_d0iws"]
 [ext_resource type="Resource" uid="uid://sq30lw04hvcb" path="res://resources/Grid.tres" id="2_uixxn"]
 
+[sub_resource type="Animation" id="Animation_etbm4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_mo1qe"]
 resource_name = "idle"
 length = 0.5
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_etbm4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e4p1r"]
