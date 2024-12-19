@@ -17,7 +17,7 @@ func _ready() -> void:
 		
 	var current_scene = scene_manager.current_scene_name
 	
-	if current_scene == "battle":
+	if current_scene == "battle" or current_scene == "volcano_battle" or current_scene == "forest_battle":
 		player.visible = false
 	else:
 		player.visible = true

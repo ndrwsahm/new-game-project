@@ -1064,7 +1064,7 @@ layer_14/z_index = 1
 position = Vector2(-1, 0)
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(-4520, 3031)
+position = Vector2(-75, 818)
 
 [node name="inside_pub" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(249, -342)
@@ -1084,28 +1084,30 @@ zoom = Vector2(1.2, 1.2)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Slime" parent="." instance=ExtResource("6_mqk0p")]
+[node name="VolcanoEnemy" parent="." instance=ExtResource("6_mqk0p")]
 position = Vector2(202, 882)
+location = "volcano"
 
-[node name="SceneTrigger2" parent="Slime" instance=ExtResource("10_41mjm")]
+[node name="SceneTrigger2" parent="VolcanoEnemy" instance=ExtResource("10_41mjm")]
 z_index = 22
 position = Vector2(-68, 67)
-connected_scene = "battle"
+connected_scene = "volcano_battle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/SceneTrigger2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VolcanoEnemy/SceneTrigger2"]
 position = Vector2(72, -59)
 shape = SubResource("CapsuleShape2D_1oj85")
 
-[node name="Slime2" parent="." instance=ExtResource("6_mqk0p")]
-position = Vector2(-5160, 2421)
+[node name="ForestEnemy" parent="." instance=ExtResource("6_mqk0p")]
+position = Vector2(-4003, 5360)
+location = "forest"
 
-[node name="SceneTrigger2" parent="Slime2" instance=ExtResource("10_41mjm")]
+[node name="SceneTrigger2" parent="ForestEnemy" instance=ExtResource("10_41mjm")]
 z_index = 22
-position = Vector2(-68, 67)
+position = Vector2(-9, 43)
 connected_scene = "battle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime2/SceneTrigger2"]
-position = Vector2(72, -59)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForestEnemy/SceneTrigger2"]
+position = Vector2(15, -32)
 shape = SubResource("CapsuleShape2D_1oj85")
 
 [node name="Guard" parent="." instance=ExtResource("7_qhbfw")]
